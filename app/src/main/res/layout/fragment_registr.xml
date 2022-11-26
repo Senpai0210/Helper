@@ -3,38 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D0A4EC"
+    android:background="#F6EDED"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.auth.RegistrFragment" >
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/login_helper_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="Логин" />
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/password_helper_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="Пароль"
         android:inputType="textPassword" />
 
     <EditText
+        style="@style/EditTextStyle"
         android:id="@+id/password_potverd_helper_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
         android:hint="Подтвердите пароль"
         android:inputType="textPassword" />
 
     <Button
+        android:textColor="#A6582222"
+        style="@style/ButtonStyle"
         android:id="@+id/registration_helper_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#19AFBD"
+        android:textSize="15sp"
         android:text="Зарегистроваться" />
 </LinearLayout>
