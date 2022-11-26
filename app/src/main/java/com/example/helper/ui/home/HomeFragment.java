@@ -14,7 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.helper.MainActivity;
+import com.example.helper.ui.MainActivity;
 import com.example.helper.R;
 import com.example.helper.viewmodels.HomeViewModel;
 
