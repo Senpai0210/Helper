@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,12 +37,13 @@ public class RegistrFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_registr, container, false);
 
-        nLoginHelper = (EditText) container.findViewById(R.id.login_helper_2);
-        nPasswordHelper = (EditText) container.findViewById(R.id.password_helper_2);
-        nPasswordPotverHelper = (EditText) container.findViewById(R.id.password_potverd_helper_2);
+        nLoginHelper = (EditText) view.findViewById(R.id.login_helper_2);
+        nPasswordHelper = (EditText) view.findViewById(R.id.password_helper_2);
+        nPasswordPotverHelper = (EditText) view.findViewById(R.id.password_potverd_helper_2);
 
-        nRegistrationHelper = (Button) container.findViewById(R.id.registration_helper_2);
+        nRegistrationHelper = (Button) view.findViewById(R.id.registration_helper_2);
         nRegistrationHelper.setEnabled(false);
 
         EditText[] edList = {nLoginHelper, nPasswordHelper,nPasswordPotverHelper};
@@ -51,14 +53,14 @@ public class RegistrFragment extends Fragment {
         nRegistrationHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (nPasswordHelper.getText().toString().equals(nPasswordPotverHelper.getText().toString())) {
-//                    Intent intent = new Intent(Helper_Registration.this, Helper.class);
-//                    startActivity(intent);
-//                } else
-//                    Toast.makeText(this,  "Вы не подтвердили пароль!", Toast.LENGTH_SHORT).show();
+                if (nPasswordHelper.getText().toString().equals(nPasswordPotverHelper.getText().toString())) {
+                    Navigation.findNavController(view).navigate(R.id.action_registrFragment_to_authFragment);
+                } else {
+                    Toast.makeText(getActivity(), "Вы не подтвердили пароль", Toast.LENGTH_SHORT).show();
+                }
             }
         });
-        return inflater.inflate(R.layout.fragment_registr, container, false);
+        return view;
     }
 
 }

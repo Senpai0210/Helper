@@ -4,30 +4,34 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.content.Intent;
+
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.example.helper.R;
-import com.example.helper.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
     public TextView tvTitle;
-    public ImageView rightIcon;
+    public ImageButton rightIcon;
     private Toolbar toolbar;
-//    public NavController navController = Navigation.findNavController(MainActivity.this, R.id.navHostFragmentActivityMain);
+    public NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        navController = Navigation.findNavController(this, R.id.navHostFragmentActivityMain);
 
-        rightIcon = (ImageView) findViewById(R.id.btnRight);
+        rightIcon = (ImageButton) findViewById(R.id.btnRight);
         rightIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.authFragment);
             }
         });
     }
