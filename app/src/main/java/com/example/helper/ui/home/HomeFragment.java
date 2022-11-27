@@ -8,6 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -21,7 +22,7 @@ import com.example.helper.viewmodels.HomeViewModel;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel mViewModel;
-//    private NavController navController = NavHostFragment.findNavController(this);
+    private NavController navController;
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
