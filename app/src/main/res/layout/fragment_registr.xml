@@ -10,25 +10,25 @@
 
     <EditText
         style="@style/EditTextStyle"
-        android:id="@+id/login_helper_2"
+        android:id="@+id/login"
         android:hint="Логин" />
 
     <EditText
         style="@style/EditTextStyle"
-        android:id="@+id/password_helper_2"
+        android:id="@+id/password"
         android:hint="Пароль"
         android:inputType="textPassword" />
 
     <EditText
         style="@style/EditTextStyle"
-        android:id="@+id/password_potverd_helper_2"
+        android:id="@+id/password_repeat"
         android:hint="Подтвердите пароль"
         android:inputType="textPassword" />
 
     <Button
         android:textColor="#A6582222"
         style="@style/ButtonStyle"
-        android:id="@+id/registration_helper_2"
+        android:id="@+id/registration"
         android:textSize="15sp"
         android:text="Зарегистроваться" />
 </LinearLayout>
