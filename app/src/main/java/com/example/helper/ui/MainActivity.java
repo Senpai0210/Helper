@@ -4,42 +4,32 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ActionMenuView;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.example.helper.R;
-import com.example.helper.databinding.ActivityMainBinding;
+import com.example.helper.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
-
     public TextView tvTitle;
     public ImageView rightIcon;
-    public Toolbar toolbar;
-    private Button button;
-    public NavController navController;
+    private Toolbar toolbar;
+//    public NavController navController = Navigation.findNavController(MainActivity.this, R.id.navHostFragmentActivityMain);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
-        navController = Navigation.findNavController(this, R.id.navHostFragmentActivityMain);
-//
-//        rightIcon = (ImageView) findViewById(R.id.btnRight);
-//        rightIcon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Navigation.findNavController(view).navigate(R.id.authFragment);
-//            }
-//        });
+        setContentView(R.layout.activity_main);
+
+        rightIcon = (ImageView) findViewById(R.id.btnRight);
+        rightIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
     }
 
     private void setSupportActionBar(Toolbar toolbar) {

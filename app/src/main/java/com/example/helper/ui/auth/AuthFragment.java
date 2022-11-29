@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -16,15 +15,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.example.helper.R;
-import com.example.helper.databinding.FragmentAuthBinding;
 import com.example.helper.viewmodels.AuthViewModel;
 
 public class AuthFragment extends Fragment {
-    private FragmentAuthBinding binding;
     private Button mEnterHelper;
+    private Button mRegistrationHelper;
     private EditText mLoginHelper;
     private EditText mPasswordHelper;
     private String LoginHelper, PasswordHelper;
@@ -38,12 +35,10 @@ public class AuthFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = FragmentAuthBinding.inflate(inflater, container, false);
-        View view = binding.getRoot();
-        mLoginHelper = binding.login;
-        mPasswordHelper = binding.password;
+        mLoginHelper = (EditText) container.findViewById(R.id.login_helper);
+        mPasswordHelper = (EditText) container.findViewById(R.id.password_helper);
 
-        mEnterHelper = binding.enter;
+        mEnterHelper = (Button) container.findViewById(R.id.enter_helper);
         mEnterHelper.setEnabled(false);
 
         EditText[] edList = {mLoginHelper, mPasswordHelper};
@@ -53,19 +48,19 @@ public class AuthFragment extends Fragment {
         mEnterHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Ура вы вошли", Toast.LENGTH_SHORT).show();
             }
         });
 
-
-        binding.registration.setOnClickListener(new View.OnClickListener() {
+        mRegistrationHelper = (Button) container.findViewById(R.id.registration_helper);
+        mRegistrationHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_authFragment_to_registrFragment);
+//                Intent intent = new Intent(Helper.this, Helper_Registration.class);
+//                startActivity(intent);
             }
         });
 
-        return view;
+        return inflater.inflate(R.layout.fragment_auth, container, false);
     }
 
     public static class CustomTextWatcher implements TextWatcher {
