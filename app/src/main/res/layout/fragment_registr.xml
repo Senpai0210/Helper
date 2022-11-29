@@ -18,7 +18,7 @@
         app:cardElevation="10dp">
 
         <EditText
-            android:id="@+id/login_helper_2"
+            android:id="@+id/login"
             style="@style/EditTextStyle"
             android:hint="Логин" />
 
@@ -33,7 +33,7 @@
         app:cardElevation="10dp">
 
         <EditText
-            android:id="@+id/password_helper_2"
+            android:id="@+id/password"
             style="@style/EditTextStyle"
             android:hint="Пароль"
             android:inputType="textPassword" />
@@ -49,14 +49,14 @@
         >
 
         <EditText
-            android:id="@+id/password_potverd_helper_2"
+            android:id="@+id/passwordRepeat"
             style="@style/EditTextStyle"
             android:hint="Подтвердите пароль"
             android:inputType="textPassword" />
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/registration_helper_2"
+        android:id="@+id/registration"
         style="@style/ButtonStyle"
         android:text="Зарегистроваться"
         android:textColor="#A6582222"

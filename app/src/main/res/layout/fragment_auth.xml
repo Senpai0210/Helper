@@ -18,7 +18,7 @@
         app:cardElevation="10dp">
 
         <EditText
-            android:id="@+id/login_helper"
+            android:id="@+id/login"
             style="@style/EditTextStyle"
             android:hint="Логин"
             android:inputType="textEmailAddress"
@@ -33,14 +33,14 @@
         app:cardCornerRadius="@dimen/_30sdp">
         <EditText
             style="@style/EditTextStyle"
-            android:id="@+id/password_helper"
+            android:id="@+id/password"
             android:hint="Пароль"
             android:inputType="textPassword" />
     </androidx.cardview.widget.CardView>
 
 
     <Button
-        android:id="@+id/enter_helper"
+        android:id="@+id/enter"
         style="@style/ButtonStyle"
         android:text="Вход"
         android:textColor="#A6582222"
@@ -54,7 +54,7 @@
         android:textSize="20dp" />
 
     <Button
-        android:id="@+id/registration_helper"
+        android:id="@+id/registration"
         style="@style/ButtonStyle"
         android:text="Регистрация"
         android:textColor="#A6582222"
