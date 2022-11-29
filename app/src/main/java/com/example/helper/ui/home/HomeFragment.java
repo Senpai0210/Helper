@@ -36,8 +36,6 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        binding.Recycler.computeHorizontalScrollExtent();
-
         return view;
     }
 
