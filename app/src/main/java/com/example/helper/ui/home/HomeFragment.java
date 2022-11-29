@@ -25,11 +25,14 @@ import com.example.helper.R;
 import com.example.helper.ui.RecyclerAdapter;
 import com.example.helper.viewmodels.HomeViewModel;
 
+import java.lang.reflect.Array;
+
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
     private HomeViewModel mViewModel;
     private NavController navController;
     private RecyclerAdapter recyclerAdapter;
+    private String[] list = {"Видео Карта", "Процессор", "Блок Питания"};
 
     public static HomeFragment newInstance() {
         return new HomeFragment();
@@ -45,15 +48,8 @@ public class HomeFragment extends Fragment {
 
         binding.recycler.setHasFixedSize(true);
 
-        recyclerAdapter = new RecyclerAdapter(10000000);
+        recyclerAdapter = new RecyclerAdapter(list);
         binding.recycler.setAdapter(recyclerAdapter);
-
-//        binding.button.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Navigation.findNavController(view).navigate(R.id.authFragment);
-//            }
-//        });
         return view;
     }
 
