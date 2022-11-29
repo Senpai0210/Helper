@@ -15,12 +15,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.helper.databinding.FragmentHomeBinding;
 import com.example.helper.ui.MainActivity;
 import com.example.helper.R;
 import com.example.helper.viewmodels.HomeViewModel;
 
 public class HomeFragment extends Fragment {
 
+    private FragmentHomeBinding binding;
     private HomeViewModel mViewModel;
     private NavController navController;
 
@@ -31,15 +33,10 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-//        ((MainActivity) getActivity()).setTitle("Главная");
-//        ((MainActivity) getActivity()).setRightIcon(R.drawable.ic_add);
-//        ((MainActivity) getActivity()).rightIcon.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                navController.findDestination(R.id.action_homeFragment_to_authFragment);
-//            }
-//        });
-        return inflater.inflate(R.layout.fragment_home, container,false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
+
+        return view;
     }
 
 }

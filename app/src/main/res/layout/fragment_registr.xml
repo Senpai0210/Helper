@@ -1,34 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6EDED"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ui.auth.RegistrFragment" >
+    tools:context=".ui.auth.RegistrFragment">
 
-    <EditText
+    <androidx.cardview.widget.CardView
         style="@style/EditTextStyle"
-        android:id="@+id/login_helper_2"
-        android:hint="Логин" />
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="@dimen/_30sdp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="10dp">
 
-    <EditText
-        style="@style/EditTextStyle"
-        android:id="@+id/password_helper_2"
-        android:hint="Пароль"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/login_helper_2"
+            style="@style/EditTextStyle"
+            android:hint="Логин" />
 
-    <EditText
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
         style="@style/EditTextStyle"
-        android:id="@+id/password_potverd_helper_2"
-        android:hint="Подтвердите пароль"
-        android:inputType="textPassword" />
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="@dimen/_30sdp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="10dp">
+
+        <EditText
+            android:id="@+id/password_helper_2"
+            style="@style/EditTextStyle"
+            android:hint="Пароль"
+            android:inputType="textPassword" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/EditTextStyle"
+        android:layout_marginBottom="50dp"
+        android:paddingBottom="@dimen/_35sdp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="10dp"
+        >
+
+        <EditText
+            android:id="@+id/password_potverd_helper_2"
+            style="@style/EditTextStyle"
+            android:hint="Подтвердите пароль"
+            android:inputType="textPassword" />
+    </androidx.cardview.widget.CardView>
 
     <Button
-        android:textColor="#A6582222"
-        style="@style/ButtonStyle"
         android:id="@+id/registration_helper_2"
-        android:textSize="15sp"
-        android:text="Зарегистроваться" />
+        style="@style/ButtonStyle"
+        android:text="Зарегистроваться"
+        android:textColor="#A6582222"
+        android:textSize="15sp" />
 </LinearLayout>

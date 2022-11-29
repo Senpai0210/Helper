@@ -9,18 +9,35 @@
     android:orientation="vertical"
     tools:context="ui.auth.AuthFragment">
 
-    <EditText
-        android:id="@+id/login_helper"
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#000000"
         style="@style/EditTextStyle"
-        android:hint="Логин"
-        android:inputType="textEmailAddress" />
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="@dimen/_30sdp"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="10dp">
 
-    <EditText
-        android:id="@+id/password_helper"
+        <EditText
+            android:id="@+id/login_helper"
+            style="@style/EditTextStyle"
+            android:hint="Логин"
+            android:inputType="textEmailAddress"
+            android:paddingBottom="5dp"/>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="10dp"
         style="@style/EditTextStyle"
-        android:layout_marginBottom="45dp"
-        android:hint="Пароль"
-        android:inputType="textPassword" />
+        android:layout_marginBottom="30dp"
+        android:paddingBottom="@dimen/_30sdp"
+        app:cardCornerRadius="@dimen/_30sdp">
+        <EditText
+            style="@style/EditTextStyle"
+            android:id="@+id/password_helper"
+            android:hint="Пароль"
+            android:inputType="textPassword" />
+    </androidx.cardview.widget.CardView>
+
 
     <Button
         android:id="@+id/enter_helper"
