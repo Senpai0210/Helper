@@ -14,8 +14,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
+import com.example.helper.databinding.ActivityMainBinding;
 import com.example.helper.databinding.FragmentHomeBinding;
 import com.example.helper.ui.MainActivity;
 import com.example.helper.R;
@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding =FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
         binding.button.setOnClickListener(new View.OnClickListener() {
@@ -42,7 +42,6 @@ public class HomeFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.authFragment);
             }
         });
-
 //        ((MainActivity) getActivity()).setTitle("Главная");
 //        ((MainActivity) getActivity()).setRightIcon(R.drawable.ic_add);
 //        ((MainActivity) getActivity()).rightIcon.setOnClickListener(new View.OnClickListener() {

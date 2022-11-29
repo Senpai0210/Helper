@@ -8,6 +8,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,17 +18,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.helper.R;
+import com.example.helper.databinding.FragmentRegistrBinding;
 import com.example.helper.ui.home.HomeFragment;
 import com.example.helper.viewmodels.RegistrViewModel;
 
 public class RegistrFragment extends Fragment {
-
-    private RegistrViewModel mViewModel;
-
-    public static RegistrFragment newInstance() {
-        return new RegistrFragment();
-    }
-
+    private FragmentRegistrBinding binding;
     public EditText nLoginHelper;
     public EditText nPasswordHelper;
     public EditText nPasswordPotverHelper;
@@ -36,12 +32,14 @@ public class RegistrFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
+        binding = FragmentRegistrBinding.inflate(inflater, container, false);
+        View view = binding.getRoot();
 
-        nLoginHelper = (EditText) container.findViewById(R.id.login_helper_2);
-        nPasswordHelper = (EditText) container.findViewById(R.id.password_helper_2);
-        nPasswordPotverHelper = (EditText) container.findViewById(R.id.password_potverd_helper_2);
+        nLoginHelper = binding.login;
+        nPasswordHelper =binding.password;
+        nPasswordPotverHelper = binding.passwordRepeat;
 
-        nRegistrationHelper = (Button) container.findViewById(R.id.registration_helper_2);
+        nRegistrationHelper = binding.registration;
         nRegistrationHelper.setEnabled(false);
 
         EditText[] edList = {nLoginHelper, nPasswordHelper,nPasswordPotverHelper};
@@ -51,14 +49,13 @@ public class RegistrFragment extends Fragment {
         nRegistrationHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                if (nPasswordHelper.getText().toString().equals(nPasswordPotverHelper.getText().toString())) {
-//                    Intent intent = new Intent(Helper_Registration.this, Helper.class);
-//                    startActivity(intent);
-//                } else
-//                    Toast.makeText(this,  "Вы не подтвердили пароль!", Toast.LENGTH_SHORT).show();
+                if (nPasswordHelper.getText().toString().equals(nPasswordPotverHelper.getText().toString())) {
+                    Navigation.findNavController(view).navigate(R.id.authFragment);
+                } else
+                    Toast.makeText((getActivity()),  "Вы не подтвердили пароль!", Toast.LENGTH_SHORT).show();
             }
         });
-        return inflater.inflate(R.layout.fragment_registr, container, false);
+        return view;
     }
 
 }

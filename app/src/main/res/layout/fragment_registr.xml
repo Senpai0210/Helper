@@ -11,7 +11,8 @@
     <EditText
         style="@style/EditTextStyle"
         android:id="@+id/login"
-        android:hint="Логин" />
+        android:hint="Логин"
+        android:inputType="textEmailAddress"/>
 
     <EditText
         style="@style/EditTextStyle"
@@ -21,7 +22,7 @@
 
     <EditText
         style="@style/EditTextStyle"
-        android:id="@+id/password_repeat"
+        android:id="@+id/passwordRepeat"
         android:hint="Подтвердите пароль"
         android:inputType="textPassword" />
 

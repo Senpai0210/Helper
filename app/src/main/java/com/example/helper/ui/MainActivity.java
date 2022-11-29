@@ -17,19 +17,12 @@ import com.example.helper.ui.home.HomeFragment;
 public class MainActivity extends AppCompatActivity {
     public TextView tvTitle;
     public ImageView rightIcon;
-    private Toolbar toolbar;
-//    public NavController navController = Navigation.findNavController(MainActivity.this, R.id.navHostFragmentActivityMain);
+    public NavController navController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        rightIcon = (ImageView) findViewById(R.id.btnRight);
-        rightIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
+        navController = Navigation.findNavController(this, R.id.navHostFragmentActivityMain);
     }
 
     private void setSupportActionBar(Toolbar toolbar) {
