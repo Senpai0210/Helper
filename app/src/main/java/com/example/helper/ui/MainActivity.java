@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         navController = Navigation.findNavController(this, R.id.navHostFragmentActivityMain);
+
     }
 
     private void setSupportActionBar(Toolbar toolbar) {
