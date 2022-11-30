@@ -16,11 +16,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
 
     private static int viewHolderCount;
     private final int numberItems;
+    public String[] LT;
 
-    public  RecyclerAdapter(int NumberOfItems){
-        numberItems = NumberOfItems;
-        viewHolderCount =0;
+    public RecyclerAdapter(String[] list) {
+        numberItems = list.length;
+        LT = list;
+        viewHolderCount = 0;
     }
+
     @SuppressLint("SetTextI18n")
     @NonNull
     @Override
@@ -33,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         View view = inflater.inflate(layoutIdForListItem, parent, false);
 
         RecyclerviewHolder viewHolder = new RecyclerviewHolder(view);
-        viewHolder.ViewHolderIndex.setText("ViewHolder Index " + viewHolderCount);
+        viewHolder.ViewHolderIndex.setText(LT[viewHolderCount]);
         viewHolderCount++;
         return viewHolder;
     }
@@ -43,12 +46,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         holder.bind(position);
     }
 
+
     @Override
     public int getItemCount() {
         return numberItems;
     }
 
-    static class RecyclerviewHolder extends RecyclerView.ViewHolder {
+    class RecyclerviewHolder extends RecyclerView.ViewHolder {
 
         TextView ItemList;
         TextView ViewHolderIndex;
@@ -61,7 +65,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         }
 
         void bind(int ListIndex) {
-            ItemList.setText(String.valueOf(ListIndex));
+            ItemList.setText(LT[ListIndex]);
         }
 
     }
