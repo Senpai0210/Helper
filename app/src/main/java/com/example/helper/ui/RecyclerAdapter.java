@@ -36,7 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         View view = inflater.inflate(layoutIdForListItem, parent, false);
 
         RecyclerviewHolder viewHolder = new RecyclerviewHolder(view);
-        viewHolder.ViewHolderIndex.setText("" + viewHolderCount);
+        viewHolder.ViewHolderIndex.setText(LT[viewHolderCount]);
         viewHolderCount++;
         return viewHolder;
     }
@@ -45,6 +45,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
     public void onBindViewHolder(@NonNull RecyclerviewHolder holder, int position) {
         holder.bind(position);
     }
+
 
     @Override
     public int getItemCount() {
