@@ -1,14 +1,6 @@
 package com.example.helper.ui.auth;
 
-
-
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -16,11 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import com.example.helper.R;
 import com.example.helper.databinding.FragmentAuthBinding;
-import com.example.helper.viewmodels.AuthViewModel;
+import com.example.helper.ui.MainActivity;
 
 public class AuthFragment extends Fragment {
     private FragmentAuthBinding binding;
@@ -33,7 +29,7 @@ public class AuthFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentAuthBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
-
+        ((MainActivity) requireActivity()).tvTitle.setText("Вход");
         mLoginHelper = binding.login;
         mPasswordHelper = binding.password;
 
@@ -47,7 +43,7 @@ public class AuthFragment extends Fragment {
         mEnterHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText((getActivity()),  "Ура вы вошли!", Toast.LENGTH_SHORT).show();
+                ((MainActivity) requireActivity()).onSupportNavigateUp();
             }
         });
 

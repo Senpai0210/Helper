@@ -11,12 +11,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
 
-import com.example.helper.R;
 import com.example.helper.databinding.FragmentRegistrBinding;
+import com.example.helper.ui.MainActivity;
 
 public class RegistrFragment extends Fragment {
+    private FragmentRegistrBinding binding;
     public EditText nLoginHelper;
     public EditText nPasswordHelper;
     public EditText nPasswordPotverHelper;
@@ -25,8 +25,9 @@ public class RegistrFragment extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        com.example.helper.databinding.FragmentRegistrBinding binding = FragmentRegistrBinding.inflate(inflater, container, false);
+        binding = FragmentRegistrBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        ((MainActivity) requireActivity()).tvTitle.setText("Регистрация");
 
         nLoginHelper = binding.login;
         nPasswordHelper = binding.password;
@@ -43,7 +44,7 @@ public class RegistrFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (nPasswordHelper.getText().toString().equals(nPasswordPotverHelper.getText().toString())) {
-                    Navigation.findNavController(view).navigate(R.id.authFragment);
+                    ((MainActivity) requireActivity()).onSupportNavigateUp();
                 } else
                     Toast.makeText((getActivity()),  "Вы не подтвердили пароль!", Toast.LENGTH_SHORT).show();
             }

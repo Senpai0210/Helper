@@ -9,6 +9,7 @@
     android:orientation="vertical"
     tools:context="ui.auth.AuthFragment">
 
+
     <androidx.cardview.widget.CardView
         app:cardBackgroundColor="#000000"
         style="@style/EditTextStyle"

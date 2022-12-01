@@ -1,38 +1,56 @@
 package com.example.helper.ui;
 
+
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toolbar;
+import androidx.navigation.ui.NavigationUI;
 
 import com.example.helper.R;
-import com.example.helper.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity {
-    public TextView tvTitle;
-    public ImageView rightIcon;
+
     public NavController navController;
+    public Toolbar Toolbar;
+    public TextView tvTitle;
+    public MenuItem item;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         navController = Navigation.findNavController(this, R.id.navHostFragmentActivityMain);
 
+        Toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(Toolbar);
+        NavigationUI.setupActionBarWithNavController(this, navController);
+        item = (MenuItem) findViewById(R.id.profil);
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
     }
 
-    private void setSupportActionBar(Toolbar toolbar) {
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.profil) {
+            navController.navigate(R.id.authFragment);
+        }
+        return super.onOptionsItemSelected(item);
     }
-    public void setTitle(String title){
-        tvTitle.setText(title);
-    }
-    public void setRightIcon(int icon){
-        rightIcon.setImageResource(icon);
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        tvTitle.setText("Helper");
+        return navController.navigateUp();
     }
 }
