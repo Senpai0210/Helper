@@ -31,7 +31,6 @@ public class RegistrFragment extends Fragment {
         binding = FragmentRegistrBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
         setHasOptionsMenu(true);
-        ((MainActivity) requireActivity()).tvTitle.setText("Регистрация");
 
         nLoginHelper = binding.login;
         nPasswordHelper = binding.password;
@@ -60,6 +59,7 @@ public class RegistrFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         MenuItem item = menu.getItem(0);
         item.setVisible(false);
+        ((MainActivity) requireActivity()).tvTitle.setText("Регистрация");
         super.onCreateOptionsMenu(menu, inflater);
     }
 

@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        tvTitle.setText("Helper");
         if (item.getItemId() == R.id.profil) {
             navController.navigate(R.id.authFragment);
         }
@@ -50,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-            return navController.navigateUp();
+        tvTitle.setText("Helper");
+        return navController.navigateUp();
     }
 }

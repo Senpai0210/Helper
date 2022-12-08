@@ -21,8 +21,6 @@ import com.example.helper.R;
 import com.example.helper.databinding.FragmentAuthBinding;
 import com.example.helper.ui.MainActivity;
 
-import java.util.Objects;
-
 public class AuthFragment extends Fragment {
     private FragmentAuthBinding binding;
     private Button mEnterHelper;
@@ -37,7 +35,6 @@ public class AuthFragment extends Fragment {
 
         setHasOptionsMenu(true);
 
-        ((MainActivity) requireActivity()).tvTitle.setText("Вход");
         mLoginHelper = binding.login;
         mPasswordHelper = binding.password;
 
@@ -69,6 +66,7 @@ public class AuthFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
         MenuItem item = menu.getItem(0);
         item.setVisible(false);
+        ((MainActivity) requireActivity()).tvTitle.setText("Вход");
         super.onCreateOptionsMenu(menu, inflater);
     }
 
