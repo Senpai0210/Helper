@@ -2,6 +2,9 @@ package com.example.helper.ui.auth;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -27,6 +30,7 @@ public class RegistrFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         binding = FragmentRegistrBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+        setHasOptionsMenu(true);
         ((MainActivity) requireActivity()).tvTitle.setText("Регистрация");
 
         nLoginHelper = binding.login;
@@ -50,6 +54,13 @@ public class RegistrFragment extends Fragment {
             }
         });
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        MenuItem item = menu.getItem(0);
+        item.setVisible(false);
+        super.onCreateOptionsMenu(menu, inflater);
     }
 
 }

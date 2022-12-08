@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     public NavController navController;
     public Toolbar Toolbar;
     public TextView tvTitle;
-    public MenuItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         Toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(Toolbar);
         NavigationUI.setupActionBarWithNavController(this, navController);
-        item = (MenuItem) findViewById(R.id.profil);
         tvTitle = (TextView) findViewById(R.id.tvTitle);
+
     }
 
     @Override
@@ -42,15 +41,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        tvTitle.setText("Helper");
         if (item.getItemId() == R.id.profil) {
             navController.navigate(R.id.authFragment);
         }
-        return super.onOptionsItemSelected(item);
+        return false;
     }
 
     @Override
     public boolean onSupportNavigateUp() {
-        tvTitle.setText("Helper");
-        return navController.navigateUp();
+            return navController.navigateUp();
     }
 }
