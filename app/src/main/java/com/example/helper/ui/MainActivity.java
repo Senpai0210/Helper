@@ -4,52 +4,34 @@ package com.example.helper.ui;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.helper.R;
+import com.example.helper.databinding.ActivityMainBinding;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
-
+    public ActivityMainBinding binding;
     public NavController navController;
-    public Toolbar Toolbar;
-    public TextView tvTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
         navController = Navigation.findNavController(this, R.id.navHostFragmentActivityMain);
 
-        Toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(Toolbar);
-        NavigationUI.setupActionBarWithNavController(this, navController);
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.profil) {
-            navController.navigate(R.id.authFragment);
-        }
-        return false;
-    }
-
-    @Override
-    public boolean onSupportNavigateUp() {
-        tvTitle.setText("Helper");
-        return navController.navigateUp();
+        BottomNavigationView navView = findViewById(R.id.BottomNavigation);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.registrFragment, R.id.homeFragment, R.id.authFragment).build();
+        NavigationUI.setupWithNavController(binding.BottomNavigation, navController);
     }
 }

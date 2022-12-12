@@ -41,7 +41,7 @@
         style="@style/ButtonStyle"
         app:cardCornerRadius="5dp"
         app:cardBackgroundColor="#000000">
-        <Button
+        <TextView
             android:id="@+id/enter"
             style="@style/ButtonStyle"
             android:text="Вход" />
@@ -55,7 +55,7 @@
         android:text="или"
         android:textSize="20dp" />
 
-    <Button
+    <TextView
         android:id="@+id/registration"
         style="@style/ButtonStyle"
         android:text="Регистрация" />

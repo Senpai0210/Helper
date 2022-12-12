@@ -55,7 +55,7 @@
             android:inputType="textPassword" />
     </androidx.cardview.widget.CardView>
 
-    <Button
+    <TextView
         android:id="@+id/registration"
         style="@style/ButtonStyle"
         android:text="Зарегистроваться"

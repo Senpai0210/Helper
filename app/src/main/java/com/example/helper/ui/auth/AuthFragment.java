@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,7 +24,7 @@ import com.example.helper.ui.MainActivity;
 
 public class AuthFragment extends Fragment {
     private FragmentAuthBinding binding;
-    private Button mEnterHelper;
+    private TextView mEnterHelper;
     private EditText mLoginHelper;
     private EditText mPasswordHelper;
 
@@ -33,13 +34,11 @@ public class AuthFragment extends Fragment {
         binding = FragmentAuthBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
-        setHasOptionsMenu(true);
-
         mLoginHelper = binding.login;
         mPasswordHelper = binding.password;
 
         mEnterHelper = binding.enter;
-        mEnterHelper.setEnabled(false);
+        binding.enter.setEnabled(false);
 
         EditText[] edList = {mLoginHelper, mPasswordHelper};
         CustomTextWatcher textWatcher = new CustomTextWatcher(edList, mEnterHelper);
@@ -48,7 +47,7 @@ public class AuthFragment extends Fragment {
         mEnterHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) requireActivity()).onSupportNavigateUp();
+                Navigation.findNavController(view).navigate(R.id.homeFragment);
             }
         });
 
@@ -62,20 +61,12 @@ public class AuthFragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu,MenuInflater inflater) {
-        MenuItem item = menu.getItem(0);
-        item.setVisible(false);
-        ((MainActivity) requireActivity()).tvTitle.setText("Вход");
-        super.onCreateOptionsMenu(menu, inflater);
-    }
-
     public static class CustomTextWatcher implements TextWatcher {
 
         View v;
         EditText[] edList;
 
-        public CustomTextWatcher(EditText[] edList, Button v) {
+        public CustomTextWatcher(EditText[] edList, TextView v) {
             this.v = v;
             this.edList = edList;
         }
