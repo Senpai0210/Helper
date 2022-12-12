@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:padding="25dp">
 
-    <TextView
+    <androidx.cardview.widget.CardView
         style="@style/RecyclerTextViewStyle"
-        android:id="@+id/Recycler" />
+        app:cardCornerRadius="@dimen/_20sdp">
 
-    <TextView
-        style="@style/RecyclerTextViewStyle"
-        android:id="@+id/RecyclerViewHolder"
-        android:layout_marginLeft="@dimen/_155sdp"/>
+        <TextView
+            android:id="@+id/Recycler"
+            style="@style/RecyclerTextViewStyle"
+            android:gravity="center" />
+    </androidx.cardview.widget.CardView>
 
 </FrameLayout>

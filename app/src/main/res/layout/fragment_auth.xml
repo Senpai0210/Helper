@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6EDED"
+    android:background="#E6ECED"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="ui.auth.AuthFragment">
@@ -14,7 +14,6 @@
         app:cardBackgroundColor="#000000"
         style="@style/EditTextStyle"
         android:layout_marginBottom="15dp"
-        android:paddingBottom="@dimen/_30sdp"
         app:cardCornerRadius="@dimen/_30sdp"
         app:cardElevation="10dp">
 
@@ -22,15 +21,13 @@
             android:id="@+id/login"
             style="@style/EditTextStyle"
             android:hint="Логин"
-            android:inputType="textEmailAddress"
-            android:paddingBottom="5dp"/>
+            android:inputType="textEmailAddress" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         app:cardElevation="10dp"
         style="@style/EditTextStyle"
         android:layout_marginBottom="30dp"
-        android:paddingBottom="@dimen/_30sdp"
         app:cardCornerRadius="@dimen/_30sdp">
         <EditText
             style="@style/EditTextStyle"
@@ -39,13 +36,17 @@
             android:inputType="textPassword" />
     </androidx.cardview.widget.CardView>
 
-
-    <Button
-        android:id="@+id/enter"
+    <androidx.cardview.widget.CardView
+        app:cardElevation="4dp"
         style="@style/ButtonStyle"
-        android:text="Вход"
-        android:textColor="#A6582222"
-        android:textSize="17sp" />
+        app:cardCornerRadius="5dp"
+        app:cardBackgroundColor="#000000">
+        <Button
+            android:id="@+id/enter"
+            style="@style/ButtonStyle"
+            android:text="Вход" />
+    </androidx.cardview.widget.CardView>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -57,9 +58,7 @@
     <Button
         android:id="@+id/registration"
         style="@style/ButtonStyle"
-        android:text="Регистрация"
-        android:textColor="#A6582222"
-        android:textSize="14sp" />
+        android:text="Регистрация" />
 
 
 </LinearLayout>

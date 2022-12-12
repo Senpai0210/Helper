@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_authFragment"
             app:destination="@id/authFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_listItemFragment"
+            app:destination="@id/listItemFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragment"
@@ -28,4 +31,9 @@
         android:name="com.example.helper.ui.auth.RegistrFragment"
         android:label="fragment_registr"
         tools:layout="@layout/fragment_registr" />
+    <fragment
+        android:id="@+id/listItemFragment"
+        android:name="com.example.helper.ui.List.ListItemFragment"
+        android:label="fragment_list_item"
+        tools:layout="@layout/fragment_list_item" />
 </navigation>
