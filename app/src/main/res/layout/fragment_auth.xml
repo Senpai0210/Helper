@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6EDED"
+    android:background="@color/gray"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="ui.auth.AuthFragment">
@@ -42,23 +42,27 @@
     <Button
         android:id="@+id/enter_helper"
         style="@style/ButtonStyle"
-        android:text="Вход"
-        android:textColor="#A6582222"
-        android:textSize="17sp" />
+        android:layout_height="60dp"
+        android:fontFamily="@font/roboto_flex"
+        android:paddingHorizontal="40dp"
+
+        android:text="Вход" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="10dp"
         android:text="или"
+        android:elevation="4dp"
         android:textSize="20dp" />
 
     <Button
         android:id="@+id/registration_helper"
         style="@style/ButtonStyle"
-        android:text="Регистрация"
-        android:textColor="#A6582222"
-        android:textSize="14sp" />
+        android:layout_height="65dp"
+        android:elevation="4dp"
+        android:fontFamily="@font/roboto_flex"
+        android:text="Регистрация" />
 
 
 </LinearLayout>

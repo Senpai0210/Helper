@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F6EDED"
+    android:background="@color/gray"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".ui.auth.RegistrFragment">
@@ -58,7 +58,9 @@
     <Button
         android:id="@+id/registration_helper_2"
         style="@style/ButtonStyle"
+        android:layout_height="65dp"
+        android:elevation="4dp"
+        android:fontFamily="@font/roboto_flex"
         android:text="Зарегистроваться"
-        android:textColor="#A6582222"
         android:textSize="15sp" />
 </LinearLayout>
