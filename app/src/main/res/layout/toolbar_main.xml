@@ -5,7 +5,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#D8B5EF"
+    android:background="@color/ButtonColor"
     app:contentInsetStart="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +21,8 @@
             android:singleLine="true"
             android:text="Helper"
             android:textColor="@color/white"
+            android:fontFamily="@font/alegreya"
+            android:textAllCaps="true"
             android:textSize="@dimen/_28sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
