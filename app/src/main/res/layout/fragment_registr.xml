@@ -58,10 +58,7 @@
     <TextView
         android:id="@+id/registration"
         style="@style/ButtonStyle"
-        android:layout_width="180dp"
-        android:paddingTop="15dp"
-        android:paddingBottom="15dp"
-        android:textAlignment="center"
+        android:gravity="center"
         android:text="Зарегистроваться"
         android:textColor="@color/white"
         android:textSize="16sp" />
