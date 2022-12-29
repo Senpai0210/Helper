@@ -59,6 +59,7 @@
         android:id="@+id/registration"
         style="@style/ButtonStyle"
         android:text="Зарегистроваться"
+        android:gravity="center"
         android:textColor="#A6582222"
         android:textSize="15sp" />
 </LinearLayout>
