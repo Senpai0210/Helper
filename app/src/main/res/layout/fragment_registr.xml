@@ -59,6 +59,7 @@
         android:id="@+id/registration"
         style="@style/ButtonStyle"
         android:gravity="center"
+        android:padding="12dp"
         android:text="Зарегистроваться"
         android:textColor="@color/white"
         android:textSize="16sp" />
