@@ -26,6 +26,7 @@ public class RegistrFragment extends Fragment {
     public EditText nLoginHelper;
     public EditText nPasswordHelper;
     public EditText nPasswordPotverHelper;
+    public EditText nName;
     public TextView nRegistrationHelper;
 
     @Override
@@ -37,11 +38,12 @@ public class RegistrFragment extends Fragment {
         nLoginHelper = binding.login;
         nPasswordHelper = binding.password;
         nPasswordPotverHelper = binding.passwordRepeat;
+        nName = binding.name;
 
         nRegistrationHelper = binding.registration;
         nRegistrationHelper.setEnabled(false);
 
-        EditText[] edList = {nLoginHelper, nPasswordHelper,nPasswordPotverHelper};
+        EditText[] edList = {nLoginHelper, nPasswordHelper,nPasswordPotverHelper, nName};
         AuthFragment.CustomTextWatcher textWatcher = new AuthFragment.CustomTextWatcher(edList, nRegistrationHelper);
         for (EditText editText : edList) editText.addTextChangedListener(textWatcher);
 
@@ -49,7 +51,7 @@ public class RegistrFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 if (nPasswordHelper.getText().toString().equals(nPasswordPotverHelper.getText().toString())) {
-                    Navigation.findNavController(view).navigate(R.id.authFragment);
+                    ((MainActivity)requireActivity()).onSupportNavigateUp();
                 } else
                     Toast.makeText((getActivity()),  "Вы не подтвердили пароль!", Toast.LENGTH_SHORT).show();
             }

@@ -47,7 +47,7 @@ public class AuthFragment extends Fragment {
         mEnterHelper.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.homeFragment);
+                ((MainActivity)requireActivity()).onSupportNavigateUp();
             }
         });
 

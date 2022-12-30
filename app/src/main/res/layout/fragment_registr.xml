@@ -18,6 +18,21 @@
         app:cardElevation="10dp">
 
         <EditText
+            android:id="@+id/name"
+            style="@style/EditTextStyle"
+            android:hint="Имя" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        style="@style/EditTextStyle"
+        android:layout_marginBottom="15dp"
+        android:paddingBottom="@dimen/_30sdp"
+        app:cardBackgroundColor="#000000"
+        app:cardCornerRadius="@dimen/_30sdp"
+        app:cardElevation="10dp">
+
+        <EditText
             android:id="@+id/login"
             style="@style/EditTextStyle"
             android:hint="Логин" />

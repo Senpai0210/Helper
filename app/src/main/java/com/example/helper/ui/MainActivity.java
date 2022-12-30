@@ -26,7 +26,12 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navView = findViewById(R.id.BottomNavigation);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.registrFragment, R.id.homeFragment, R.id.authFragment).build();
+                R.id.articlesFragment, R.id.homeFragment, R.id.authFragment).build();
         NavigationUI.setupWithNavController(binding.BottomNavigation, navController);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        return Navigation.findNavController(this, R.id.navHostFragmentActivityMain).navigateUp();
     }
 }

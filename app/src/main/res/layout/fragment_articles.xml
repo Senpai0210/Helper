@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.auth.ArticlesFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_1sdp"
+        android:text="Стотья 1"
+        app:cardBackgroundColor="#000000"/>
+    <TextView
+        android:padding="@dimen/_1sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Стотья 2" />
+
+</LinearLayout>
